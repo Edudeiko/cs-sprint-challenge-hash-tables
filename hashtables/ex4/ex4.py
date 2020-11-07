@@ -2,7 +2,24 @@ def has_negatives(a):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    positive = []
+    for ii in a:
+        result = abs(ii)
+        positive.append(result)
+
+    cache = dict()
+    for ii in positive:
+        if ii not in cache:
+            cache[ii] = 1
+        else:
+            cache[ii] += 1
+
+    cached = list(cache.items())
+
+    result = []
+    for k, v in cached:
+        if v > 1:
+            result.append(k)
 
     return result
 
