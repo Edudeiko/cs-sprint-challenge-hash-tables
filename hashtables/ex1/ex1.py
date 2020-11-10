@@ -3,7 +3,7 @@
 
 def get_indices_of_item_weights(weights, length, limit):
     """
-    YOUR CODE HERE
+    get indices of an item weight
     """
     cache = dict()
     for idx in range(len(weights)):

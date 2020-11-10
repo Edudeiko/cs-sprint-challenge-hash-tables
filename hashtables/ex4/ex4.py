@@ -1,6 +1,6 @@
 def has_negatives(a):
     """
-    YOUR CODE HERE
+    get positive numbers that have corresponding negative numbers in the list
     """
     positive = []
     for ii in a:
@@ -20,6 +20,8 @@ def has_negatives(a):
     for k, v in cached:
         if v > 1:
             result.append(k)
+        else:
+            pass
 
     return result
 
