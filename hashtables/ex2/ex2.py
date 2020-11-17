@@ -28,18 +28,43 @@ def reconstruct_trip(tickets, length):
 
     # return route
 
-    cache = dict()
+    '''
+    1st solution
+    '''
 
-    for ii in tickets:
-        cache[ii.source] = ii.destination
+    # cache = dict()
 
-    route = [cache["NONE"]]
+    # for ii in tickets:
+    #     cache[ii.source] = ii.destination
 
-    for idx in range(len(tickets)-2):
-        loop = cache[route[idx]]
-        route.append(loop)
+    # route = [cache["NONE"]]
 
-        if idx == len(tickets)-3:
-            route.append("NONE")
+    # for idx in range(len(tickets)-2):
+    #     loop = cache[route[idx]]
+    #     route.append(loop)
 
-    return route
+    #     if idx == len(tickets)-3:
+    #         route.append("NONE")
+
+    # return route
+
+    '''
+    2nd solution
+    '''
+
+    ticket_source = {t.source: t for t in tickets}
+    ticket_destination = {t.destination: t for t in tickets}
+
+    first = ticket_source['NONE']
+    last = ticket_destination['NONE']
+
+    result = []
+    current = first
+
+    while current is not last:
+        result.append(current.destination)
+        current = ticket_source[current.destination]
+
+    result.append('NONE')
+
+    return result

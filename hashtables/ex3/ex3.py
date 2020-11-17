@@ -1,6 +1,6 @@
-import time
+# import time
 
-start = time.time()
+# start = time.time()
 
 
 def intersection(arrays):
@@ -25,6 +25,22 @@ def intersection(arrays):
 
     return result
 
+    # if arrays is None:
+    #     return []
+
+    # if len(arrays) == 1:
+    #     return arrays[0]
+
+    # cache = {x: True for x in arrays[0]}
+
+    # for arr in arrays[1:]:
+    #     cache_2 = {x: True for x in arr}
+    #     for x in list(cache.keys()):
+    #         if x not in cache_2:
+    #             del cache[x]
+
+    # return list(cache.keys())
+
 
 if __name__ == "__main__":
     arrays = []
@@ -35,6 +51,6 @@ if __name__ == "__main__":
 
     print(intersection(arrays))
 
-end = time.time()
+# end = time.time()
 
-print(f'{end-start}')
+# print(f'{end-start}')

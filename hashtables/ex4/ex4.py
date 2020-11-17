@@ -2,27 +2,34 @@ def has_negatives(a):
     """
     get positive numbers that have corresponding negative numbers in the list
     """
-    positive = []
-    for ii in a:
-        result = abs(ii)
-        positive.append(result)
+    # positive = []
+    # for ii in a:
+    #     result = abs(ii)
+    #     positive.append(result)
 
-    cache = dict()
-    for ii in positive:
-        if ii not in cache:
-            cache[ii] = 1
-        else:
-            cache[ii] += 1
+    # cache = dict()
+    # for ii in positive:
+    #     if ii not in cache:
+    #         cache[ii] = 1
+    #     else:
+    #         cache[ii] += 1
 
-    cached = list(cache.items())
+    # cached = list(cache.items())
 
+    # result = []
+    # for k, v in cached:
+    #     if v > 1:
+    #         result.append(k)
+    #     else:
+    #         pass
+
+    # return result
+
+    negatives = {-x: True for x in a if x < 0}
     result = []
-    for k, v in cached:
-        if v > 1:
-            result.append(k)
-        else:
-            pass
-
+    for x in a:
+        if x in negatives:
+            result.append(x)
     return result
 
 
